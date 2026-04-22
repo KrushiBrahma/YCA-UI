@@ -1,0 +1,233 @@
+.container {
+    // flex: 1;
+    background-color: #F9F9F9;
+
+    .parent {
+        padding: 0.4rem;
+        margin: 0 auto;
+        padding-top: 0.5rem;
+
+
+        .heading_info {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            align-items: center;
+            text-align: start;
+
+            .heading {
+                display: flex;
+                flex-direction: column;
+                row-gap: 0.5rem;
+                align-items: flex-start;
+
+                .label {
+                    font-size: 0.8rem;
+                    line-height: 1rem;
+                    color: #7A5649;
+                }
+
+                .sub_label {
+                    // font-size: 3rem;
+                    line-height: 3rem;
+                    color: #0D631B;
+
+                }
+
+                .underline {
+                    width: 3.5rem;
+                    height: 0.2rem;
+                    background-color: #0D631B;
+                    margin-top: 0.3rem;
+                }
+            }
+
+            .plot_info {
+                display: flex;
+                flex-direction: column;
+
+                .label {
+                    font-size: 0.8rem;
+                    line-height: 1.25rem;
+                    color: #40493D;
+
+                }
+
+                .value {
+                    font-size: 1.5rem;
+                    color: #1A1C1C;
+                }
+            }
+
+
+        }
+
+        .card {
+            margin-top: 1rem;
+            width: auto;
+            height: 12rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+            &:hover {
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                transform: translateY(-2px);
+            }
+
+            .card_image {
+                width: 35%;
+                height: 100%;
+                object-fit: cover !important;
+            }
+
+            .card_content {
+                // display: flex;
+                flex: 1;
+                background-color: #fff;
+                padding: 0.5rem;
+
+                .plot_details {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+
+                    .plot_info {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .name_info {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 0.5rem;
+                            text-align: start;
+
+                            .plot_name {
+                                font-size: 1.25rem;
+                                font-weight: bold;
+                                line-height: 1.5rem;
+                                color: #1A1C1C;
+                            }
+
+                            .crop_info {
+                                display: flex;
+                                align-items: center;
+                                column-gap: 0.5rem;
+
+
+                                .chip {
+                                    font-size: 0.7rem;
+                                    background-color: #FFDBCF;
+                                    color: #603F33;
+                                }
+
+                                .crop_name {
+                                    font-size: 0.7rem;
+                                    font-weight: normal;
+                                    line-height: 1rem;
+                                    color: #40493D;
+                                }
+                            }
+                        }
+
+                        .image {
+                            width: 5px;
+                            height: 1rem;
+                        }
+                    }
+
+                    .plot_area {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+
+                        .area {
+                            display: flex;
+                            flex-direction: column;
+                            // row-gap: 0.2rem;
+                            text-align: start;
+
+                            .label {
+                                font-size: 0.62rem;
+                                font-weight: normal;
+                                line-height: 0.9rem;
+                                color: #707A6C;
+                            }
+
+                            .value {
+                                font-size: 1.25rem;
+                                font-weight: bold;
+                                line-height: 1.7rem;
+                                color: #1A1C1C;
+
+                                .unit {
+                                    font-size: 0.7rem;
+                                    font-weight: normal;
+                                    line-height: 1rem;
+                                }
+
+                            }
+                        }
+
+                        .chip {
+                            background-color: #DCFCE7;
+                            color: #0D631B;
+                        }
+                    }
+                }
+
+            }
+
+        }
+        .new_plot{
+            margin-top: 1rem;
+            width: auto;
+            height: 10rem;
+            background-color: #E8E8E8;
+            border: 1px dotted #E8E8E8;
+            border-radius: 1rem;
+
+            .add_plot{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                // row-gap: 0.2rem;
+                height: 100%;
+
+                .logo{
+                    width: 3rem;
+                    height: 3rem;
+                }
+                .label{
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    line-height: 1.6rem;
+                    color: #40493D;
+
+                }
+                .sub_label{
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    line-height: 1rem;
+                    color: #707A6C;
+
+                }
+            }
+
+
+
+        }
+
+        
+    } 
+    .plot_button{
+            background-color: #2E7D32;
+            color: #fff;
+        }  
+
+}
+
