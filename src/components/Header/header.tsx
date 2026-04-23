@@ -11,7 +11,7 @@ const Header = ()=>{
                 <Box className={`${styles.flex_between}`} sx={{width:{xs:'100%', sm:'50%'},padding:'0.5rem'}}>
                     <Box className={styles.username_logo}>
                         <img src={logo} className={styles.logo}></img>
-                        <Box className={styles.username}>Resient Farmer</Box>
+                        <Box className={styles.username}>Resilent Farmer</Box>
                     </Box>
                     <Button className={styles.chip}>English</Button>
                 </Box>

@@ -71,6 +71,7 @@
             flex-wrap: nowrap;
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
 
             &:hover {
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -125,7 +126,7 @@
                                 }
 
                                 .crop_name {
-                                    font-size: 0.7rem;
+                                    font-size: 0.75rem;
                                     font-weight: normal;
                                     line-height: 1rem;
                                     color: #40493D;
@@ -136,6 +137,7 @@
                         .image {
                             width: 5px;
                             height: 1rem;
+                            cursor: pointer;
                         }
                     }
 
@@ -197,6 +199,7 @@
                 align-items: center;
                 // row-gap: 0.2rem;
                 height: 100%;
+                cursor: pointer;
 
                 .logo{
                     width: 3rem;
@@ -230,4 +233,5 @@
         }  
 
 }
+
 
