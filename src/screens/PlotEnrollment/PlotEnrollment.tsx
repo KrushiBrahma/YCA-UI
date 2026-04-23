@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Box, Button, Chip, IconButton, MenuItem, Select, Step, StepLabel, Stepper, TextField } from '@mui/material';
 import styles from './PlotEnrollment.module.scss';
 import { ArrowBack } from '@mui/icons-material'
@@ -19,13 +19,13 @@ const PlotEnrollment = () => {
     const navigate = useNavigate();
     const [currentStep, setCurrentStep] = useState(0);
     const [coordinates, setCoordinates] = useState<Coordinates[]>([]);
-    const [isEnrollmentSucceded, setIsEnrollmentSucceded] = useState(true);
+    const [isEnrollmentSucceded, setIsEnrollmentSucceded] = useState(false);
 
     const stepLabels = useMemo(() => getStepLabels(currentStep), [currentStep])
     const isLastStep = useMemo(() => currentStep === steps.length - 1, [currentStep]);
 
     const handleNext = () => {
-        if (isLastStep) console.log(currentStep)
+        if (isLastStep) setIsEnrollmentSucceded(true)
         else setCurrentStep((prev) => prev + 1);
     }
     const getLocation = () => {
@@ -41,7 +41,7 @@ const PlotEnrollment = () => {
                 setCoordinates([...coordinates, { longitude: pos.coords.longitude, latitude: pos.coords.latitude }])
             },
             (err) => {
-                console.log('error in location')
+                console.log('error in location',err)
             },
             {
                 enableHighAccuracy: true,
@@ -207,7 +207,7 @@ const CustomSelect = () => {
 }
 
 const CustomDatePicker = () => {
-    const [value, setValue] = useState(null);
+    const [value] = useState(null);
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker

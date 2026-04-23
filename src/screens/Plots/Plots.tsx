@@ -1,8 +1,6 @@
-import { Box, Chip, Button, Icon, IconButton } from '@mui/material';
+import { Box, Chip,Icon,} from '@mui/material';
 import styles from './plots.module.scss';
 import actionIcon from '../../assets/action_icon.svg'
-import plot_one from '../../assets/Container.svg'
-import plot_two from '../../assets/Map View Highway Plot.svg'
 
 import addplot from '../../assets/Background.svg'
 import { plots } from './utils';
