@@ -233,7 +233,7 @@ const CustomDatePicker = () => {
                 onChange={(newValue) => setValue(newValue)}
                 sx={{
                     '& .MuiPickersOutlinedInput-root': {
-                        background: '#f5f5f5',
+                        background: '#efefeb',
                         borderRadius: '0.75rem',
                     },
                     '& .MuiPickersOutlinedInput-root .MuiPickersOutlinedInput-notchedOutline': {
