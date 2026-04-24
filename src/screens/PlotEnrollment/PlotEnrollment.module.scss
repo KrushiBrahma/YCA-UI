@@ -101,6 +101,60 @@
                 text-transform: none;
                 padding: 0.75rem 0;
             }
+
+
+
+            .coordinates {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                background-color: #E8F0EC;
+                margin-top: 1rem;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border: 1px solid #0D631B;
+
+
+                .selected {
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    line-height: 1.6rem;
+                    color: #000000;
+                }
+                .points{
+                    display: flex;
+                    column-gap: 1rem;
+
+                
+
+                .area {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 0.5rem;
+                        background-color: #F3F3F3;
+                        border-radius: 0.5rem;
+                        padding: 0.5rem;
+                        flex: 1;
+
+                        .label {
+                            font-size: 0.75rem;
+                            font-weight: 500;
+                            line-height: 1rem;
+                            color: #40493D;
+                        }
+
+                        .value {
+                            color: #0D631B;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            line-height: 1.5rem;
+                        }
+                    }
+                }
+            }
+
+
+
         }
 
         .success {
@@ -199,23 +253,36 @@
                         }
                     }
 
-                    
+
                 }
-                .message{
-                        display: flex;
-                        column-gap: 0.5rem;
-                        .icon{
-                            width: 1rem;
-                            height: 1rem;
-                        }
-                        .text{
-                            font-size: 0.9rem;
-                            font-weight: 500;
-                            line-height: 1.25rem;
-                            color: #795548;
-                        }
+
+                .message {
+                    display: flex;
+                    column-gap: 0.5rem;
+
+                    .icon {
+                        width: 1rem;
+                        height: 1rem;
                     }
-                
+
+                    .text {
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        line-height: 1.25rem;
+                        color: #795548;
+                    }
+                }
+
+            }
+
+            .next {
+                background-color: #0B6B2E;
+                color: #fff;
+                font-size: 1.25rem;
+                font-weight: 500;
+                line-height: 1.62rem;
+                text-transform: none;
+                padding: 0.75rem 0;
             }
 
         }

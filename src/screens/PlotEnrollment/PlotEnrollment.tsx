@@ -56,7 +56,7 @@ const PlotEnrollment = () => {
     return <>
         <Box className={styles.header}>
             <Box className={styles.parent} >
-                <IconButton className={styles.back_icon} onClick={() => navigate('/dashboard')}><ArrowBack /></IconButton>
+                <IconButton className={styles.back_icon} onClick={() => navigate('/plots')}><ArrowBack /></IconButton>
                 <Box className={styles.font18}>Plot Registration</Box>
             </Box>
         </Box>
@@ -115,12 +115,29 @@ const PlotEnrollment = () => {
                             </>}
                             {currentStep === 2 && <Box>
                                 <Button fullWidth className={styles.next} onClick={getLocation}>Get Location</Button>
-                                {coordinates.map((coordinate) => <Box>{coordinate.longitude}</Box>)}
+                                {coordinates.length> 0 && <Box className={styles.coordinates}>
+                                    <Box className={styles.selected}>Selected Coordinates</Box>
+                                {coordinates.map((coordinate) =><Box className={styles.points}> <Box className={styles.area}>
+                                    <Box className={styles.label}>Latitude</Box>
+                                <Box className={styles.value}>{coordinate.latitude}</Box>
+                                </Box>
+                                <Box className={styles.area}>
+                                    <Box className={styles.label}>Longitude</Box>
+                                <Box className={styles.value}>{coordinate.longitude}</Box>
+                                </Box>
+                                </Box>
+                            )}
+                                
+                             <Box >
+                                
+                            
+                        </Box>
+                                </Box>}
                             </Box>}
 
 
                         </Box>
-                        <Button fullWidth className={styles.next} onClick={handleNext}>{isLastStep ? 'Submit' : 'Next'}</Button>
+                        {(!isLastStep|| coordinates.length >2) && <Button fullWidth className={styles.next} onClick={handleNext}>{isLastStep ? 'Submit' : 'Next'}</Button>}
                     </Box>
                 </> : <Box className={styles.success}>
                     <Box className={styles.logo_label}>
@@ -155,6 +172,7 @@ const PlotEnrollment = () => {
                         </Box>
 
                     </Box>
+                    <Button fullWidth className={styles.next} onClick={()=>navigate('/plots')}>Back to Home</Button>
 
                 </Box>}
             </Box>
@@ -207,11 +225,12 @@ const CustomSelect = () => {
 }
 
 const CustomDatePicker = () => {
-    const [value] = useState(null);
+    const [value,setValue] = useState<any>(null);
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
                 value={value}
+                onChange={(newValue)=>setValue(newValue)}
                 sx={{
                     '& .MuiPickersOutlinedInput-root': {
                         background: '#efefeb',
