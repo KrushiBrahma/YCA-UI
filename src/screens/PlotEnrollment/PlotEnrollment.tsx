@@ -41,7 +41,7 @@ const PlotEnrollment = () => {
                 setCoordinates([...coordinates, { longitude: pos.coords.longitude, latitude: pos.coords.latitude }])
             },
             (err) => {
-                console.log('error in location',err)
+                console.log('error in location', err)
             },
             {
                 enableHighAccuracy: true,
@@ -115,29 +115,29 @@ const PlotEnrollment = () => {
                             </>}
                             {currentStep === 2 && <Box>
                                 <Button fullWidth className={styles.next} onClick={getLocation}>Get Location</Button>
-                                {coordinates.length> 0 && <Box className={styles.coordinates}>
+                                {coordinates.length > 0 && <Box className={styles.coordinates}>
                                     <Box className={styles.selected}>Selected Coordinates</Box>
-                                {coordinates.map((coordinate) =><Box className={styles.points}> <Box className={styles.area}>
-                                    <Box className={styles.label}>Latitude</Box>
-                                <Box className={styles.value}>{coordinate.latitude}</Box>
-                                </Box>
-                                <Box className={styles.area}>
-                                    <Box className={styles.label}>Longitude</Box>
-                                <Box className={styles.value}>{coordinate.longitude}</Box>
-                                </Box>
-                                </Box>
-                            )}
-                                
-                             <Box >
-                                
-                            
-                        </Box>
+                                    {coordinates.map((coordinate) => <Box className={styles.points}> <Box className={styles.area}>
+                                        <Box className={styles.label}>Latitude</Box>
+                                        <Box className={styles.value}>{coordinate.latitude}</Box>
+                                    </Box>
+                                        <Box className={styles.area}>
+                                            <Box className={styles.label}>Longitude</Box>
+                                            <Box className={styles.value}>{coordinate.longitude}</Box>
+                                        </Box>
+                                    </Box>
+                                    )}
+
+                                    <Box >
+
+
+                                    </Box>
                                 </Box>}
                             </Box>}
 
 
                         </Box>
-                        {(!isLastStep|| coordinates.length >2) && <Button fullWidth className={styles.next} onClick={handleNext}>{isLastStep ? 'Submit' : 'Next'}</Button>}
+                        {(!isLastStep || coordinates.length > 2) && <Button fullWidth className={styles.next} onClick={handleNext}>{isLastStep ? 'Submit' : 'Next'}</Button>}
                     </Box>
                 </> : <Box className={styles.success}>
                     <Box className={styles.logo_label}>
@@ -161,7 +161,7 @@ const PlotEnrollment = () => {
                             </Box>
                         </Box>
                         <Box className={styles.crop_details}>
-                             <Box className={styles.area}>
+                            <Box className={styles.area}>
                                 <Box className={styles.label}>Plot ID</Box>
                                 <Box className={styles.value}>UAG-44298-PO</Box>
                             </Box>
@@ -172,7 +172,7 @@ const PlotEnrollment = () => {
                         </Box>
 
                     </Box>
-                    <Button fullWidth className={styles.next} onClick={()=>navigate('/plots')}>Back to Home</Button>
+                    <Button fullWidth className={styles.next} onClick={() => navigate('/plots')}>Back to Home</Button>
 
                 </Box>}
             </Box>
@@ -225,15 +225,15 @@ const CustomSelect = () => {
 }
 
 const CustomDatePicker = () => {
-    const [value,setValue] = useState<any>(null);
+    const [value, setValue] = useState<any>(null);
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
                 value={value}
-                onChange={(newValue)=>setValue(newValue)}
+                onChange={(newValue) => setValue(newValue)}
                 sx={{
                     '& .MuiPickersOutlinedInput-root': {
-                        background: '#efefeb',
+                        background: '#f5f5f5',
                         borderRadius: '0.75rem',
                     },
                     '& .MuiPickersOutlinedInput-root .MuiPickersOutlinedInput-notchedOutline': {
