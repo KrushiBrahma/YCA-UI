@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { Box, Button, Chip, IconButton, MenuItem, Select, Step, StepLabel, Stepper, TextField } from '@mui/material';
+import { Box, Button, Chip, IconButton, MenuItem, Select, Skeleton, Step, StepLabel, Stepper, TextField } from '@mui/material';
 import styles from './PlotEnrollment.module.scss';
 import { ArrowBack } from '@mui/icons-material'
 import plot from '../../assets/plot_type.svg';
@@ -194,7 +194,7 @@ const handleSaveUndo = ()=>{
   }, []);
 
   return (<>
-    <MapContainer
+    {center ? <MapContainer
       center={center}
       zoom={13}
       maxZoom={18}
@@ -210,7 +210,7 @@ const handleSaveUndo = ()=>{
       ))}
       {(points.length >1 && !isFinished)&& <Polyline positions={points} />}
       {isFinished && <Polygon positions={points} />}
-    </MapContainer>
+    </MapContainer>:<Skeleton variant='rectangular' width={'100%'} height={'500px'}></Skeleton>}
     <Button fullWidth className={styles.next} onClick={handleSaveUndo} disabled={(points.length<3)}>{(!isFinished) ?'Save Coordinates':'Undo'}</Button>
     </>
   );
